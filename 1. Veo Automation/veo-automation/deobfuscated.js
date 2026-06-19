@@ -83385,9 +83385,9 @@ function pie() {
   return "python";
 }
 function hie() {
-  let _0x2ebff5 = ["ffmpeg", mt.join(Jt.app.getPath("userData"), "ffmpeg", "ffmpeg.exe"), mt.join(process.cwd(), "ffmpeg", "ffmpeg.exe")];
+  let _0x2ebff5 = [pt, mt.join(Jt.app.getPath("userData"), "ffmpeg", "ffmpeg.exe"), mt.join(Jt.app.getAppPath(), "node_modules", "ffmpeg-static", "ffmpeg.exe"), mt.join(process.cwd(), "ffmpeg", "ffmpeg.exe"), "ffmpeg"];
   for (let _0x2491a3 of _0x2ebff5) {
-    if (_0x2491a3 === "ffmpeg" || Ot.existsSync(_0x2491a3)) {
+    if (_0x2491a3 && (_0x2491a3 === "ffmpeg" || Ot.existsSync(_0x2491a3))) {
       return _0x2491a3;
     }
   }
@@ -86132,10 +86132,24 @@ $.ipcMain.handle("system:check-ffmpeg", async () => {
         };
       }
     }
+    if (pt && require("fs").existsSync(pt)) {
+      return {
+        installed: !0,
+        version: M0 || "bundled",
+        path: pt
+      };
+    }
     return {
       installed: !1
     };
   } catch {
+    if (pt && require("fs").existsSync(pt)) {
+      return {
+        installed: !0,
+        version: M0 || "bundled",
+        path: pt
+      };
+    }
     return {
       installed: !1
     };

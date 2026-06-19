@@ -9,8 +9,9 @@
   "scripts": {
     "start": "node_modules/electron/dist/electron.exe .",
     "build": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\"",
-    "test": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\"",
-    "verify:bundle": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\""
+    "test": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js .",
+    "verify:bundle": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\"",
+    "verify:contract": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js ."
   },
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",

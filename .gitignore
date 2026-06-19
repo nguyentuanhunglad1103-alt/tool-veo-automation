@@ -4,6 +4,18 @@ node_modules/
 # Portable runtimes
 .runtime/
 
+# Restored packaged runtimes from installers
+**/resources/antigravity-core.dist/
+**/resources/grok-engine.dist/
+**/resources/app.asar.unpacked/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Agent local indexes
+.gitnexus/
+
 # Logs
 *.log
 npm-debug.log*

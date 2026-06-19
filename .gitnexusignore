@@ -1,0 +1,12 @@
+node_modules/
+.runtime/
+.git/
+.gitnexus/
+**/dist/assets/
+**/resources/antigravity-core.dist/
+**/resources/grok-engine.dist/
+**/resources/app.asar.unpacked/
+**/__pycache__/
+**/*.pyc
+**/*.map
+**/package-lock.json
