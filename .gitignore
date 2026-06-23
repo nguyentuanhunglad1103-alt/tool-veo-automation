@@ -20,6 +20,13 @@ __pycache__/
 *.log
 npm-debug.log*
 
+# Local recovery/checkpoint artifacts
+*.bak
+**/*.bak
+*.bak_*
+**/*.bak_*
+**/decompile/
+
 # OS
 .DS_Store
 Thumbs.db

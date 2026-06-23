@@ -9,9 +9,15 @@
   "scripts": {
     "start": "node_modules/electron/dist/electron.exe .",
     "build": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\"",
-    "test": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js .",
+    "test": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js . && ..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-cloud-ai-contract.js",
     "verify:bundle": "..\\..\\.runtime\\node\\node.exe -e \"const fs=require('fs'); for (const f of ['deobfuscated.js','preload.js','dist/index.html']) { if (!fs.existsSync(f)) throw new Error('Missing '+f); } console.log('bundle artifacts ok');\"",
-    "verify:contract": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js ."
+    "verify:contract": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-ipc-contract.js .",
+    "verify:cloud": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\verify-cloud-ai-contract.js",
+    "generate:preload": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\generate-preload-entry.js",
+    "finalize:cloud": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\finalize-cloud-runtime.js",
+    "sanitize:cloud-bundle": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\sanitize-cloud-bundle.js",
+    "remove:offline-whisper": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\remove-offline-whisper-runtime.js",
+    "route:cloud-renderer": "..\\..\\.runtime\\node\\node.exe ..\\..\\scripts\\route-renderer-cloud-api.js"
   },
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",
