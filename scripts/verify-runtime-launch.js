@@ -4,7 +4,7 @@ const fs = require('fs');
 const os = require('os');
 
 const workspaceRoot = path.resolve(__dirname, '..');
-const appDir = path.join(workspaceRoot, '1. Veo Automation', 'veo-automation');
+const appDir = workspaceRoot;
 const electronExe = path.join(appDir, 'node_modules', 'electron', 'dist', 'electron.exe');
 const userDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veo-runtime-smoke-'));
 const cleanup = () => {

@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const workspaceRoot = path.resolve(__dirname, '..');
-const appDir = path.join(workspaceRoot, '1. Veo Automation', 'veo-automation');
+const appDir = workspaceRoot;
 const mainPath = path.join(appDir, 'deobfuscated.js');
 const rendererPath = path.join(appDir, 'dist', 'assets', 'index-ByQoZoaH.js');
 

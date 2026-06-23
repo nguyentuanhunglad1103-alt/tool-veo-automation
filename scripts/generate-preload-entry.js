@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const workspaceRoot = path.resolve(__dirname, '..');
-const appDir = path.join(workspaceRoot, '1. Veo Automation', 'veo-automation');
+const appDir = workspaceRoot;
 const originalPath = path.join(appDir, 'preload.js');
 const cloudTailPath = path.join(appDir, 'preload-cloud-tail.js');
 const outputPath = path.join(appDir, 'preload-entry.js');

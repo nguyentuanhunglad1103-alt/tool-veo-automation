@@ -4,7 +4,7 @@ const assert = require('assert');
 const path = require('path');
 
 const workspaceRoot = path.resolve(__dirname, '..');
-const appDir = path.join(workspaceRoot, '1. Veo Automation', 'veo-automation');
+const appDir = workspaceRoot;
 const { registerCloudAI } = require(path.join(appDir, 'cloud-ai.js'));
 
 const handlers = new Map();

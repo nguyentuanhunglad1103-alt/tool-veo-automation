@@ -6,8 +6,6 @@ const path = require('path');
 const workspaceRoot = path.resolve(__dirname, '..');
 const bundlePath = path.join(
   workspaceRoot,
-  '1. Veo Automation',
-  'veo-automation',
   'dist',
   'assets',
   'index-ByQoZoaH.js'
